@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    app:
+        image: ghcr.io/rusdacent/inotify-command:latest
+        restart: always
+        volumes:
+            - "./config/:/config:rw"
+            - "/etc/localtime:/etc/localtime"
+            - "${FILES_DIR}:/dir1"
+        # networks:
+        #     - main
